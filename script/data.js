@@ -84,16 +84,16 @@ var weatherData = new Vue ({
     
     showWeather: function() {
       if (weatherData.cityWeather.temperature > 35) {
-        Vue.set(weatherData, "backgroundPicture", "/style/videos/beachfire.gif");
+        Vue.set(weatherData, "backgroundPicture", "style/videos/beachfire.gif");
         return;
       } else if (weatherData.cityWeather.main == "Rain") {
-        Vue.set(weatherData, "backgroundPicture", "/style/videos/rain.gif");
+        Vue.set(weatherData, "backgroundPicture", "style/videos/rain.gif");
       } else if (weatherData.cityWeather.main == "Clouds") {
-        Vue.set(weatherData, "backgroundPicture", "/style/videos/clouds.gif")
+        Vue.set(weatherData, "backgroundPicture", "style/videos/clouds.gif")
       } else if (weatherData.cityWeather.main == "Snow") {
-        Vue.set(weatherData, "backgroundPicture", "/style/videos/snow.gif")
+        Vue.set(weatherData, "backgroundPicture", "style/videos/snow.gif")
       }else {
-        Vue.set(weatherData, "backgroundPicture", "/style/videos/mountain.gif")
+        Vue.set(weatherData, "backgroundPicture", "style/videos/mountain.gif")
       }
     
     }
