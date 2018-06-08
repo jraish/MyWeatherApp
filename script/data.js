@@ -56,7 +56,7 @@ var weatherData = new Vue ({
     },
     
     getCity: function() {
-      weatherData.openWeatherAPI = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherData.cityChoice + "," + weatherData.country
+      weatherData.openWeatherAPI = "https://api.openweathermap.org/data/2.5/weather?q=" + weatherData.cityChoice + "," + weatherData.country
       var weather = this.cityWeather
       
       fetch(weatherData.openWeatherAPI + "&appid=" + weatherData.APIKey)
