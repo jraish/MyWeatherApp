@@ -14,7 +14,8 @@ var weatherData = new Vue ({
       "attractions": {
         "Berlin": "Fernsehturm",
         "Paris": "Eiffel Tower",
-        "Vienna": "Opera House"
+        "Vienna": "Opera House",
+        "London": "British Library - or something actually interesting"
       },
       "backgroundPicture": "style/videos/mountain.gif",
     }
