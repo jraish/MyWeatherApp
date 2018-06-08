@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="background">
+    <div id="weatherData" v-bind:style='"background: linear-gradient(rgb(179, 255, 230, 0.50), rgb(255, 128, 128, 0.50)), url(" + backgroundPicture + ") center no-repeat"'>
+      <div class="row" id="headline">
+          <h3 class="text">What's the weather like in...</h3>
+        </div>
+      <div id="searchDiv">
+        <form action="#">
+          <div id="form">
+            <div>
+              <input type="text" id="searchBar" placeholder="City" v-model="cityChoice" class="forms">
+            </div>
+            <div>
+              <select v-model="country">
+                <option value="" disabled selected>Country</option>
+                <template v-for="(country, value) in countries">
+                  <option v-bind:value="country.code">{{country.name}}</option>
+                </template>
+              </select>
+            </div>
+            <div>
+              <input type="submit" id="submit" value="Go"  v-on:click="getCity();">
+            </div>      
+          </div>
+        </form>
+      </div>
+      <template v-if="badCity">
+        <div id="badCity">
+          <h3 class="text">We couldn't find that city</h3>
+        </div>
+      </template>
+      <template v-if="choiceMade">
+        <div id="cityFacts">
+          <div class="someFacts">
+            <h3 class="text">{{cityWeather.main}}</h3>
+            <h3 class="text">{{cityWeather.temperature}} degrees</h3>
+            <h3 class="text">{{cityWeather.humidity}}% humidity</h3>
+          </div>
+          <div class="someFacts" v-if="cityAttraction">
+            <h3 class="text">Why not go to the {{cityWeather.attraction}}?</h3>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/script/data.js"></script>
+</body>
+</html>
